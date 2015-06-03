@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bsGrid = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDatabaseName = new System.Windows.Forms.TextBox();
             this.pgbProgress = new System.Windows.Forms.ProgressBar();
@@ -104,15 +104,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(760, 456);
             this.dataGridView1.TabIndex = 6;
             // 
-            // button1
+            // btnFind
             // 
-            this.button1.Location = new System.Drawing.Point(697, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFind.Location = new System.Drawing.Point(697, 64);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.TabIndex = 4;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -135,7 +135,7 @@
             this.pgbProgress.Location = new System.Drawing.Point(12, 64);
             this.pgbProgress.Name = "pgbProgress";
             this.pgbProgress.Size = new System.Drawing.Size(679, 23);
-            this.pgbProgress.TabIndex = 10;
+            this.pgbProgress.TabIndex = 99;
             // 
             // Form1
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.pgbProgress);
             this.Controls.Add(this.txtDatabaseName);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPassword);
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bsGrid;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDatabaseName;
         private System.Windows.Forms.ProgressBar pgbProgress;

@@ -14,12 +14,14 @@ namespace SqlTypeFinder
         public Form1()
         {
             InitializeComponent();
-            txtDatabaseName.Text = "RCDLOYALTY_MPM";
             dataGridView1.DataSource = bsGrid;
+            pgbProgress.Value = 100;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            btnFind.Enabled = false;
+
             try
             {
                 ServerConnection srvConn = new ServerConnection();
@@ -29,13 +31,18 @@ namespace SqlTypeFinder
                 srvConn.Password = txtPassword.Text;
                 Server srv = new Server(srvConn);
 
+                pgbProgress.Value = 0;
+
                 Database db = srv.Databases[txtDatabaseName.Text];
                 DataTable dataTable = db.EnumObjects(DatabaseObjectTypes.Table);
 
                 var dbColumnsInfo = new List<DbColumInfo>();
 
-                var count = 0;
-                foreach (DataRow row in dataTable.Rows)
+                var step = 0;
+                var rows = dataTable.Rows;
+                var total = rows.Count;
+
+                foreach (DataRow row in rows)
                 {
                     string sSchema = (string)row["Schema"];
                     if (sSchema == "sys" || sSchema == "INFORMATION_SCHEMA")
@@ -71,8 +78,8 @@ namespace SqlTypeFinder
                             }
                         }
                     }
-                    count++;
-                    pgbProgress.Value = count * 100 / dataTable.Rows.Count;
+                    step++;
+                    pgbProgress.Value = step * 100 / total;
                 }
 
                 bsGrid.DataSource = dbColumnsInfo.OrderBy(x => x.TableName);
@@ -81,6 +88,8 @@ namespace SqlTypeFinder
             {
                 MessageBox.Show(ex.Message);
             }
+
+            btnFind.Enabled = true;
         }
     }
 }
