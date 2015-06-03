@@ -34,6 +34,7 @@ namespace SqlTypeFinder
 
                 var dbColumnsInfo = new List<DbColumInfo>();
 
+                var count = 0;
                 foreach (DataRow row in dataTable.Rows)
                 {
                     string sSchema = (string)row["Schema"];
@@ -70,6 +71,8 @@ namespace SqlTypeFinder
                             }
                         }
                     }
+                    count++;
+                    pgbProgress.Value = count * 100 / dataTable.Rows.Count;
                 }
 
                 bsGrid.DataSource = dbColumnsInfo.OrderBy(x => x.TableName);

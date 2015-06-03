@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDatabaseName = new System.Windows.Forms.TextBox();
+            this.pgbProgress = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsGrid)).BeginInit();
             this.SuspendLayout();
@@ -97,15 +98,15 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 93);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 485);
+            this.dataGridView1.Size = new System.Drawing.Size(760, 456);
             this.dataGridView1.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(697, 35);
+            this.button1.Location = new System.Drawing.Point(697, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -129,11 +130,19 @@
             this.txtDatabaseName.Size = new System.Drawing.Size(200, 20);
             this.txtDatabaseName.TabIndex = 9;
             // 
+            // pgbProgress
+            // 
+            this.pgbProgress.Location = new System.Drawing.Point(12, 64);
+            this.pgbProgress.Name = "pgbProgress";
+            this.pgbProgress.Size = new System.Drawing.Size(679, 23);
+            this.pgbProgress.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.pgbProgress);
             this.Controls.Add(this.txtDatabaseName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -166,6 +175,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDatabaseName;
+        private System.Windows.Forms.ProgressBar pgbProgress;
     }
 }
 
